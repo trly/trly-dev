@@ -1,0 +1,23 @@
+services:
+  reverse-proxy:
+    image: 'ghcr.io/trly/caddy:sha256-06e53641355f9790e101eeb9d21e8472433ccb62c136cadc37f404144a0fda75.sig'
+    restart: always
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy-data:/data
+      - caddy-config:/config
+    ports:
+      - '80:80'
+      - '443:443'
+    x-podman-env-secrets:
+      porkbun-api-key: PORKBUN_API_KEY
+      porkbun-api-secret-key: PORKBUN_API_SECRET_KEY
+volumes:
+  caddy-data:
+  caddy-config:
+
+secrets:
+  porkbun-api-key:
+    external: true
+  porkbun-api-secret-key:
+    external: true
