@@ -1,6 +1,6 @@
 services:
   reverse-proxy:
-    image: 'ghcr.io/trly/caddy:sha256-06e53641355f9790e101eeb9d21e8472433ccb62c136cadc37f404144a0fda75.sig'
+    image: ghcr.io/trly/caddy:main
     restart: always
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
