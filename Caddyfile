@@ -4,7 +4,7 @@
 		api_key {env.PORKBUN_API_KEY}
 		api_secret_key {env.PORKBUN_API_SECRET_KEY}
 	}
-    acme_email {env.ACME_EMAIL}
+	acme_email {env.ACME_EMAIL}
 }
 
 trly.dev {
