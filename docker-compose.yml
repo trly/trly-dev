@@ -13,9 +13,23 @@ services:
       porkbun-api-key: PORKBUN_API_KEY
       porkbun-api-secret-key: PORKBUN_API_SECRET_KEY
       acme-email: ACME_EMAIL
+
+  health:
+    image: lscr.io/linuxserver/healthchecks:latest
+    restart: always
+    environment:
+      - SITE_ROOT=https://health.trly.dev
+      - RP_ID=health.trly.dev
+    x-podman-env-secrets:
+      healthcheck-admin: SUPERUSER_EMAIL
+      healthcheck-password: SUPERUSER_PASSWORD
+    volumes:
+      - health-config:/config
+
 volumes:
   caddy-data:
   caddy-config:
+  health-config:
 
 secrets:
   porkbun-api-key:
@@ -23,4 +37,8 @@ secrets:
   porkbun-api-secret-key:
     external: true
   acme-email:
+    external: true
+  healthcheck-admin:
+    external: true
+  healthcheck-password:
     external: true
