@@ -12,6 +12,7 @@ services:
     x-podman-env-secrets:
       porkbun-api-key: PORKBUN_API_KEY
       porkbun-api-secret-key: PORKBUN_API_SECRET_KEY
+      acme-email: ACME_EMAIL
 volumes:
   caddy-data:
   caddy-config:
@@ -20,4 +21,6 @@ secrets:
   porkbun-api-key:
     external: true
   porkbun-api-secret-key:
+    external: true
+  acme-email:
     external: true
