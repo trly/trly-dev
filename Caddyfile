@@ -6,6 +6,10 @@
 	email {env.ACME_EMAIL}
 }
 
+health.trly.dev {
+	reverse_proxy localhost:8000
+}
+
 trly.dev {
 	respond "Hello, world!"
 }
