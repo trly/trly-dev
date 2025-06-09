@@ -4,7 +4,6 @@
 		api_secret_key {env.PORKBUN_API_SECRET_KEY}
 		resolvers curitiba.ns.porkbun.com fortaleza.ns.porkbun.com maceio.ns.porkbun.com salvador.ns.porkbun.com
 	}
-	acme_dns_wait 300
 	email {env.ACME_EMAIL}
 }
 
