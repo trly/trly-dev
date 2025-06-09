@@ -7,8 +7,8 @@ quad-ops deployment for trly.dev
 ``` bash
 set +o history
 export PORKBUN_API_KEY=your-porkbun-api-key
-export PORKBUN_API_SECRET=your-porkbun-api-secret
+export PORKBUN_API_SECRET_KEY=your-porkbun-api-secret
 set -o history
 podman secret create porkbun-api-key <(echo $PORKBUN_API_KEY)
-podman secret create porkbun-api-secret <(echo $PORKBUN_API_SECRET)
+podman secret create porkbun-api-secret-key <(echo $PORKBUN_API_SECRET_KEY)
 ```
