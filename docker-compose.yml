@@ -16,7 +16,7 @@ services:
 
   headscale:
     container_name: headscale
-    image: docker.io/headscale/headscale:latest-alpine
+    image: docker.io/headscale/headscale:stable
     restart: unless-stopped
     volumes:
       - headscale-config:/etc/headscale
