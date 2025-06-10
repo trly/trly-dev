@@ -16,3 +16,8 @@ trly.dev {
 	respond "Hello, world!"
 	import porkbun_tls
 }
+
+vpn.trly.dev {
+	reverse_proxy 127.0.0.1:8080
+	import porkbun_tls
+}
