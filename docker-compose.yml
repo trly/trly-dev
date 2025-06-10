@@ -14,9 +14,22 @@ services:
       porkbun-api-secret-key: PORKBUN_API_SECRET_KEY
       acme-email: ACME_EMAIL
 
+  headscale:
+    container_name: headscale
+    image: docker.io/headscale/headscale:latest-alpine
+    restart: unless-stopped
+    volumes:
+      headscale-config: /etc/headscale
+      headscale-data: /var/lib/headscale
+    entrypoint: headscale serve
+    depends_on:
+      - reverse-proxy
+
 volumes:
   caddy-data:
   caddy-config:
+  headscale-config:
+  headscale-data:
 
 secrets:
   porkbun-api-key:
