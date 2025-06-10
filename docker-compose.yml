@@ -19,8 +19,8 @@ services:
     image: docker.io/headscale/headscale:latest-alpine
     restart: unless-stopped
     volumes:
-      headscale-config: /etc/headscale
-      headscale-data: /var/lib/headscale
+      - headscale-config:/etc/headscale
+      - headscale-data:/var/lib/headscale
     entrypoint: headscale serve
     depends_on:
       - reverse-proxy
