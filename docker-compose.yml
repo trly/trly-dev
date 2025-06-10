@@ -22,7 +22,7 @@ services:
       - headscale-config:/etc/headscale
       - ./headscale.yml:/etc/headscale/config.yml:z
       - headscale-data:/var/lib/headscale
-    command: [headscale, serve]
+    entrypoint:: [headscale, serve]
     depends_on:
       - reverse-proxy
 
