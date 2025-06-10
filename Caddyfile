@@ -12,11 +12,6 @@
 	}
 }
 
-health.trly.dev {
-	reverse_proxy health:8000
-	import porkbun_tls
-}
-
 trly.dev {
 	respond "Hello, world!"
 	import porkbun_tls
