@@ -21,7 +21,7 @@ services:
     volumes:
       - headscale-config:/etc/headscale
       - headscale-data:/var/lib/headscale
-    entrypoint: headscale serve
+    command: [headscale, serve]
     depends_on:
       - reverse-proxy
 
