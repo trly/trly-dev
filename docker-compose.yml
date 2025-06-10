@@ -15,8 +15,7 @@ services:
       acme-email: ACME_EMAIL
 
   headscale:
-    container_name: headscale
-    image: docker.io/headscale/headscale:stable
+    image: docker.io/headscale/headscale:0.26.1
     restart: unless-stopped
     volumes:
       - headscale-config:/etc/headscale
