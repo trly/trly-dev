@@ -20,9 +20,7 @@ services:
     environment:
       - SITE_ROOT=https://health.trly.dev
       - RP_ID=health.trly.dev
-    x-podman-env-secrets:
-      healthcheck-admin: SUPERUSER_EMAIL
-      healthcheck-password: SUPERUSER_PASSWORD
+      - REGISTRATION_OPEN=false
     volumes:
       - health-config:/config
 
