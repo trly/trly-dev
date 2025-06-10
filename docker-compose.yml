@@ -20,7 +20,7 @@ services:
     environment:
       - SITE_ROOT=https://health.trly.dev
       - RP_ID=health.trly.dev
-      - REGISTRATION_OPEN=false
+      - REGISTRATION_OPEN='False'
     volumes:
       - health-config:/config
 
