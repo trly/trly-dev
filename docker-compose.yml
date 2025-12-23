@@ -1,35 +1,22 @@
 services:
   reverse-proxy:
-    image: ghcr.io/trly/caddy:main
+    image: ghcr.io/trly/caddy:2.11
     restart: always
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:z
       - caddy-data:/data
       - caddy-config:/config
     ports:
-      - '80:80'
-      - '443:443'
+      - "80:80"
+      - "443:443"
     x-podman-env-secrets:
       porkbun-api-key: PORKBUN_API_KEY
       porkbun-api-secret-key: PORKBUN_API_SECRET_KEY
       acme-email: ACME_EMAIL
 
-  headscale:
-    image: docker.io/headscale/headscale:0.26.1
-    restart: unless-stopped
-    volumes:
-      - headscale-config:/etc/headscale
-      - ./headscale.yml:/etc/headscale/config.yml:z
-      - headscale-data:/var/lib/headscale
-    command: serve
-    depends_on:
-      - reverse-proxy
-
 volumes:
   caddy-data:
   caddy-config:
-  headscale-config:
-  headscale-data:
 
 secrets:
   porkbun-api-key:
